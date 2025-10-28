@@ -7,7 +7,10 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [petsName, setPetsName] = useState("");
-  const [text, setText] = useState("");
+  const [petsBirth, setPetsBirth] = useState("");
+  const [breed, setBreed] = useState("");
+  const [toy, setToy] = useState("");
+
   return (
     <View
       style={{ flex: 1, justifyContent: "center", backgroundColor: "#ecf0f1" }}
@@ -33,20 +36,20 @@ const App = () => {
       <Custom
         label="pet's date of birth"
         placeholder="enter pet's date of birth"
-        value={text}
-        onChangeText={setText}
+        value={petsBirth}
+        onChangeText={setPetsBirth}
       />
       <Custom
         label="breed"
         placeholder="enter your pet's breed"
-        value={text}
-        onChangeText={setText}
+        value={breed}
+        onChangeText={setBreed}
       />
       <Custom
         label="favorite toy"
         placeholder="enter your pet's favorite toy"
-        value={text}
-        onChangeText={setText}
+        value={toy}
+        onChangeText={setToy}
       />
     </View>
   );
