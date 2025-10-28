@@ -10,6 +10,16 @@ const App = () => {
   const [petsBirth, setPetsBirth] = useState("");
   const [breed, setBreed] = useState("");
   const [toy, setToy] = useState("");
+  // state variable for confirming password
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  // function to check the password (does it match the previous entry?)
+  const checkPassword = () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+    }
+  }
+
 
   return (
     <View
@@ -26,7 +36,16 @@ const App = () => {
         placeholder="Enter password"
         value={password}
         onChangeText={setPassword}
+        secureTextEntry={true} // hides characters as they are typed
       />
+      // re-enter password and check if it matches
+      <Custom 
+        label="confirm password"
+        placeholder="re-enter password"
+        value={confirmPassword}
+        onChangeText={setConfirmPassword}
+        secureTextEntry={true}
+        onEndEditing={checkPassword} /> 
       <Custom
         label="pet's name"
         placeholder="enter your pet's name"
