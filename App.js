@@ -38,7 +38,7 @@ const App = () => {
         onChangeText={setPassword}
         secureTextEntry={true} // hides characters as they are typed
       />
-      // re-enter password and check if it matches
+      {/* re-enter password and check if it matches */}
       <Custom 
         label="confirm password"
         placeholder="re-enter password"
