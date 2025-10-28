@@ -6,7 +6,7 @@ In this project, you’re going to build something that almost every app needs- 
 
 Your form should allow people to provide their email for a username, a password, and then metadata about their pet including:
 
-name
-date of birth
-breed
+name,
+date of birth,
+breed,
 favorite toy
