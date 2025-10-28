@@ -1,17 +1,30 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 
-export default function Custom({ label, placeholder, value, onChangeText }) {
+export default function Custom(props) {
   // will receive props from the Parent (App.js)
 
   return (
-    <View>
-      <Text>{label}</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>{props.label}</Text>
       <TextInput
-        placeholder={placeholder}
-        value={value}
-        onChangeText={onChangeText}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChangeText={props.onChangeText}
+        style={styles.text}
+        secureTextEntry={props.secureTextEntry}
+        onSubmitEditing={props.onSubmitEditing}
       />
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    padding: 16, 
+  },
+  text: {
+    padding: 8, 
+    fontSize: 18
+  }
+
+})

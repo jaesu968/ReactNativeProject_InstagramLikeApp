@@ -1,29 +1,29 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import Custom from "./Custom.tsx";
 
 const App = () => {
   // state variables for setting text in the custom components
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [petsName, setPetsName] = useState("");
   const [petsBirth, setPetsBirth] = useState("");
   const [breed, setBreed] = useState("");
   const [toy, setToy] = useState("");
-  // state variable for confirming password
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   // function to check the password (does it match the previous entry?)
   const checkPassword = () => {
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Passwords do not match, please try again!");
     }
   }
 
 
   return (
-    <View
-      style={{ flex: 1, justifyContent: "center", backgroundColor: "#ecf0f1" }}
+    <ScrollView
+      style={{ flex: 1, backgroundColor: "#ecf0f1" }}
+      contentContainerStyle={{ justifyContent: "center" }}
     >
       <Custom
         label="email:"
@@ -45,7 +45,8 @@ const App = () => {
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         secureTextEntry={true}
-        onEndEditing={checkPassword} /> 
+        onSubmitEditing={checkPassword}
+      /> 
       <Custom
         label="pet's name"
         placeholder="enter your pet's name"
@@ -70,7 +71,7 @@ const App = () => {
         value={toy}
         onChangeText={setToy}
       />
-    </View>
+    </ScrollView>
   );
 };
 
